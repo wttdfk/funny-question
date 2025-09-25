@@ -72,6 +72,8 @@
 
     // Show greeting when "Yes" is clicked
     yesBtn.addEventListener("click", () => {
+       yesBtn.style.display = "none";
+      noBtn.style.display = "none";
       greetDiv.textContent = "🎉 Yay! I knew you’d say YES! I like you too beautiful ❤️ 🎉";
     });
   </script>
