@@ -63,11 +63,16 @@
     const greetDiv = document.getElementById("greet");
 
     // Move "No" button randomly when mouse tries to hover
-    noBtn.addEventListener("mouseover", () => {
+   function moveNoButton() {
       const x = Math.floor(Math.random() * (window.innerWidth - 100));
       const y = Math.floor(Math.random() * (window.innerHeight - 100));
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
+    }
+    noBtn.addEventListener("mouseover", moveNoButton);
+    noBtn.addEventListener("touchstart", (e) => {
+      e.preventDefault(); // prevent accidental clicks
+      moveNoButton();
     });
 
     // Show greeting when "Yes" is clicked
